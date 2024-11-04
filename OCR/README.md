@@ -50,3 +50,23 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 ```
 
 Now you're ready to run the application!
+
+
+## Creating an Executable
+
+To create a standalone executable file, use `PyInstaller`. Make sure `PyInstaller` is installed:
+```bash
+pip install pyinstaller
+```
+
+Then, navigate to your project directory and use the following command:
+```bash
+pyinstaller --onefile --windowed --icon=../ocr.ico new_ocr.py
+```
+
+### Explanation:
+- `--onefile`: Packages everything into a single executable file.
+- `--windowed`: Hides the terminal window (useful for GUI applications).
+- `--icon=ocr.ico`: Sets the application icon (make sure `ocr.ico` is in the same directory or specify the correct path).
+
+After running this command, the executable can be found in the `dist` folder created within your project directory.
