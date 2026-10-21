@@ -14,81 +14,198 @@ basic-utility-tools/
 └── yt_dl/                 # Video and audio download helper scripts
 ```
 
-✨ Features & Modules
-1. Interval Screenshot (Interval_screenshot/)
+# Basic Utility Tools
+
+A collection of Python-based utilities for screenshot automation, Optical Character Recognition (OCR), and media downloading.
+
+## ✨ Features & Modules
+
+### 1. Interval Screenshot (`Interval_screenshot/`)
+
 Automatically captures full-screen or window screenshots at customizable time intervals.
 
-Useful for tracking progress, automated logging, monitoring workflows, or creating visual time-lapses.
+**Use cases:**
+- Tracking progress and documenting workflows.
+- Automated visual logging.
+- Creating visual time-lapses.
+- Capturing screenshots at regular intervals.
 
-Typically utilizes libraries such as pyautogui, pillow, or opencv.
+**Technologies:** `PyAutoGUI`, `Pillow`, `OpenCV`
 
-2. Optical Character Recognition (OCR/)
-Extracts machine-encoded text directly from images, scans, and documents.
+### 2. Optical Character Recognition (OCR) (`OCR/`)
 
-Ideal for digitizing printed text, extracting snippets from captured screenshots, and quick batch text recognition.
+Extracts machine-readable text from images, scanned documents, and screenshots.
 
-Built using Python OCR frameworks (such as pytesseract / Tesseract OCR or easyocr).
+**Use cases:**
+- Digitizing printed text.
+- Extracting text from captured screenshots.
+- Batch text recognition.
+- Exporting extracted text to `.txt` files.
 
-3. Media Downloader (yt_dl/)
-Automates video and audio extraction from supported video platforms.
+**Technologies:** `pytesseract`, `Tesseract OCR`, `EasyOCR`
 
-Handles standard and high-resolution streams with direct output storage.
+### 3. Media Downloader (`yt_dl/`)
 
-Built using tools like yt-dlp or pytube.
+Downloads video and audio from supported media platforms, with options for selecting available formats and quality.
 
-🚀 Getting Started
-Prerequisites
-Python 3.8+ installed on your system.
+**Features:**
+- Downloads supported video and audio streams.
+- Supports high-resolution media when available.
+- Saves downloaded files locally.
+- Uses `yt-dlp` or `pytube` for media extraction.
 
-Tesseract OCR engine (if using Tesseract-based OCR):
+**Technologies:** `yt-dlp`, `pytube`
 
-Windows: Download and install via the official UB-Mannheim Tesseract installer and add it to your system PATH.
+## 🚀 Getting Started
 
-macOS: brew install tesseract
+### Prerequisites
 
-Linux (Debian/Ubuntu): sudo apt-get install tesseract-ocr
+- Python 3.8 or later.
+- Git.
+- Tesseract OCR, if using the Tesseract-based OCR implementation.
 
-Installation
-Clone the repository:
+### Installing Tesseract OCR
 
-Bash
-git clone [https://github.com/SinghVipulRaj/basic-utility-tools.git](https://github.com/SinghVipulRaj/basic-utility-tools.git)
+If your OCR implementation uses Tesseract, install the OCR engine for your operating system.
+
+**Windows**
+
+Download and install Tesseract OCR using the [UB Mannheim Tesseract installer](https://github.com/UB-Mannheim/tesseract/wiki). Ensure that the installation directory is added to your system's `PATH`.
+
+**macOS**
+
+```bash
+brew install tesseract
+```
+
+**Linux (Debian/Ubuntu)**
+
+```bash
+sudo apt-get update
+sudo apt-get install tesseract-ocr
+```
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/SinghVipulRaj/basic-utility-tools.git
 cd basic-utility-tools
-Set up a virtual environment (recommended):
+```
 
-Bash
+**2. Create a virtual environment**
+
+```bash
 python -m venv venv
-# On Windows:
+```
+
+**3. Activate the virtual environment**
+
+Windows:
+
+```bash
 venv\Scripts\activate
-# On macOS/Linux:
+```
+
+macOS/Linux:
+
+```bash
 source venv/bin/activate
-Install common dependencies:
+```
 
-Bash
+**4. Install the dependencies**
+
+```bash
 pip install pillow pyautogui pytesseract easyocr yt-dlp opencv-python jupyterlab
-🛠️ Usage
-Navigate into the individual tool directory or launch Jupyter Notebook:
+```
 
-Bash
+Install `pytube` separately if required by your media downloader:
+
+```bash
+pip install pytube
+```
+
+> **Note:** Install only the dependencies required by the tools you intend to use. Some packages, such as EasyOCR, may require additional system resources.
+
+## 🛠️ Usage
+
+You can run individual utilities from their respective directories or use JupyterLab to work with the available notebooks.
+
+### Launch JupyterLab
+
+From the repository root, run:
+
+```bash
 jupyter lab
-Running the Screenshot Tool
-Navigate to Interval_screenshot/ and execute the corresponding Python script or open the notebook to configure capture intervals and save paths.
+```
 
-Running OCR
-Navigate to OCR/, specify the target image path in the script/notebook, and run the cells to output extracted text into the console or a .txt file.
+### Running the Screenshot Tool
 
-Running Media Downloader
-Navigate to yt_dl/, supply the target URL in the script/notebook, and run to download the highest-quality stream available.
+1. Navigate to `Interval_screenshot/`.
+2. Open the relevant Python script or Jupyter notebook.
+3. Configure the screenshot interval and output directory.
+4. Execute the script or notebook to start capturing screenshots.
 
-🤝 Contributing
-Contributions, bug fixes, and feature additions are welcome:
+### Running OCR
 
-Fork the Project.
+1. Navigate to `OCR/`.
+2. Specify the input image or document path.
+3. Run the relevant Python script or notebook.
+4. View the extracted text in the console or save it to a `.txt` file.
 
-Create your Feature Branch (git checkout -b feature/NewUtility).
+### Running the Media Downloader
 
-Commit your Changes (git commit -m 'Add new utility tool').
+1. Navigate to `yt_dl/`.
+2. Open the relevant Python script or notebook.
+3. Provide the URL of the supported media.
+4. Configure the desired output format or quality, if supported.
+5. Run the tool to download the media to the configured output directory.
 
-Push to the Branch (git push origin feature/NewUtility).
+> **Important:** Download media only when you have the necessary rights or permission and comply with the applicable platform terms and copyright laws.
 
-Open a Pull Request.
+## 📁 Project Structure
+
+```text
+basic-utility-tools/
+├── Interval_screenshot/
+│   └── Screenshot automation scripts/notebooks
+├── OCR/
+│   └── OCR scripts/notebooks
+├── yt_dl/
+│   └── Media downloader scripts/notebooks
+└── README.md
+```
+
+*The directory contents shown above are illustrative. Actual filenames and subdirectories may differ.*
+
+## 🤝 Contributing
+
+Contributions, bug fixes, and feature enhancements are welcome!
+
+To contribute:
+
+1. **Fork** the repository.
+2. Create a feature branch:
+
+   ```bash
+   git checkout -b feature/NewUtility
+   ```
+
+3. Implement your changes and test them.
+4. Commit your changes:
+
+   ```bash
+   git commit -m "Add new utility tool"
+   ```
+
+5. Push your branch:
+
+   ```bash
+   git push origin feature/NewUtility
+   ```
+
+6. Open a Pull Request describing your changes.
+---
+
+**Built with Python** 🐍
