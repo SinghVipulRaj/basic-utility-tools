@@ -12,6 +12,7 @@ basic-utility-tools/
 ├── Interval_screenshot/   # Automated interval-based screenshot capture utilities
 ├── OCR/                   # Optical character recognition scripts to extract text from images
 └── yt_dl/                 # Video and audio download helper scripts
+```
 
 ✨ Features & Modules
 1. Interval Screenshot (Interval_screenshot/)
